@@ -1,0 +1,133 @@
+%--- Preamble ---------------------------------------------------------%
+% Load LaTeX packages
+\documentclass[10pt, xcolor=dvipsnames]{beamer} 
+\usepackage[absolute, overlay]{textpos}                           % supports floating text in any location
+\usepackage{tikz}
+\usepackage{tkz-berge}						       % graph drawing macro
+\usetikzlibrary{graphs}
+\usetikzlibrary{graphdrawing}
+\usetikzlibrary{graphs.standard}
+\usetikzlibrary{quotes}
+\usegdlibrary{force}
+
+
+% Customize theme attributes
+\useoutertheme{infolines}					                     % adds 3 box footer
+\usetheme[height=7mm]{Rochester} 				                 % choose theme
+\setbeamertemplate{blocks}[rounded][shadow=true] 		         % rounded theorem box with shadow
+\setbeamertemplate{caption}[numbered]                             % enable counting of tables/figures
+
+% Define template colors
+\definecolor{QPblue}{RGB}{0,25,100}                               % define QP blue using RGB code
+\definecolor{QPgreen}{RGB}{0,153,110}                             % define QP green using RGB code
+\setbeamercolor{title}{fg=white, bg=QPblue}                       % define title page box color
+\setbeamercolor{frametitle}{fg=white, bg=QPblue}                  % define frame title color
+\setbeamercolor{normal text}{fg=black}                            % define standard font color
+\setbeamercolor{author in head/foot}{fg=QPblue, bg=QPblue!75}    % define infoline 1st box color
+\setbeamercolor{title in head/foot}{fg=QPblue, bg=QPblue!60}     % define info line 2nd box color
+\setbeamercolor{date in head/foot}{fg=QPblue, bg=QPblue!30}	  % define infoline 3rd box color
+\setbeamercolor{block title}{fg=QPblue!50!QPgreen, bg=QPblue!30} % define theorem box title color
+\setbeamercolor{block body}{fg=QPblue!50!QPgreen, bg=gray!10}	 % define theorem box body color
+\setbeamercolor{local structure}{fg=QPblue!75}		           % define bullet and enumerate list colors
+
+% Define global environments
+\newenvironment{reference}[2]{                                    % define environment for footnotes
+  \begin{textblock*}{\textwidth}(#1, #2)
+      \tiny\it\bgroup\color{red!70!QPblue}}{\egroup\end{textblock*}}
+
+% Define title page logo and project metadata
+\titlegraphic{\includegraphics[width=3cm]{UNINOVE_LOGO.JPG}\hspace*{0cm}~   
+}
+
+\title{Teoria dos Grafos - UNINOVE} 
+\subtitle{Creating A Custom Presentation Template with \LaTeX{} Code}
+\author{Jose Storopoli} 
+\institute[Cidades Inteligentes e Sustentáveis]{
+   \textcolor{QPblue!75}{Universidade Nove de Julho \\
+   UNINOVE \\
+   São Paulo \\ 
+   Brasil \\ [1ex]
+   \texttt{josees@uni9.pro.br}}
+} 
+\date{Setembro 2020}
+
+\begin{document}
+
+%--- Title Page -------------------------------------------------------%
+ 
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+%--- Slide 1 ----------------------------------------------------------%
+\begin{frame}
+\frametitle{Graphs using TikZ}
+
+\begin{figure}
+
+\tikz \graph [spring layout, nodes={draw,circle}] {
+a[as=$a_1$, red] ->[thick, red, "foo"] b -- c -- a; %node+edge style + label
+d -- e;
+f -- g -- h -- d -- f;
+e -- g; };
+
+\caption{\label{fig:graph_8}Graph with 8 vertices.}
+\end{figure}
+\end{frame}
+
+%--- Slide 2 ----------------------------------------------------------%
+\begin{frame}
+\frametitle{Graph Macros using TikZ}
+A complete graph
+
+\begin{figure}
+
+\tikz \graph {subgraph K_n [n=6, clockwise, nodes={draw,circle}] };
+\caption{\label{fig:graph_k_6}Complete Graph with 6 vertices.}
+
+\end{figure}
+\end{frame}
+
+%--- Slide 3 ----------------------------------------------------------%
+\begin{frame}
+\frametitle{Graphs using tkz-berge}
+A complete graph
+
+\begin{figure}
+
+\begin{tikzpicture}[scale=0.4]
+  \grComplete[Math]{7}
+  
+\end{tikzpicture}
+
+\caption{\label{fig:complete_7}Complete Graph with 7 vertices.}
+\end{figure}
+
+\end{frame}
+
+%--- Slide 4 ----------------------------------------------------------%
+\begin{frame}
+\frametitle{Graphs using tkz-berge}
+A star graph
+
+\begin{figure}
+
+\begin{tikzpicture}[scale=0.4]
+
+%\grStar[prefix=s, Math = true]{4}
+\SetVertexNoLabel        % remove labels from Nodes
+\grStar[]{4}
+\AssignVertexLabel[Math=true]{a}{s_2, s_3, s_4, s_1}
+  
+\end{tikzpicture}
+
+\caption{\label{fig:star_4}Star Graph with 4 vertices.}
+\end{figure}
+
+\end{frame}
+
+
+
+ %--- End -------------------------------------------------------------%
+
+\end{document}

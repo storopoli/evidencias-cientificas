@@ -1,6 +1,6 @@
 %--- Preamble ---------------------------------------------------------%
 % Load LaTeX packages
-\documentclass[10pt, xcolor=dvipsnames]{beamer}
+\documentclass[12pt, xcolor=dvipsnames]{beamer}
 \usepackage[absolute, overlay]{textpos}                           % supports floating text in any location
 \usepackage[utf8]{inputenc}
 \usepackage{tikz}
@@ -8,6 +8,7 @@
 %\usepackage[english]{babel}
 %\usepackage[american]{babel}
 \usepackage[brazil]{babel}
+\usepackage{graphicx}
 
 % Customize theme attributes
 \useoutertheme{infolines}					                     % adds 3 box footer
@@ -60,7 +61,64 @@
 %--- Slide 1 ----------------------------------------------------------%
 
 \begin{frame}{Cargo Cult Science}
+  \begin{columns}
+    \begin{column}{0.45\textwidth}
+      \begin{figure}[p]
+        \includegraphics[width=6cm]{images/cargo_cult.png}<2->
+    \end{figure}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{itemize}
+        \item<3-> Melanésia (Oceania) durante Segunda Guerra Mundial
+        \item<4-> Culturas isoladas em ilhas entram em contato com forças aliadas
+        \item<5-> Depois da guerra os soldados foram embora com seus aviões e cargas
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \begin{reference}{4mm}{85mm}
+    Feynman, R. (1974). Cargo cult science. Caltech commencement address.
+  \end{reference}
+\end{frame}
 
+%--- Slide 2 ----------------------------------------------------------%
+
+\begin{frame}{O que é Ciência do Culto à Carga?}
+  \begin{itemize}
+    \item<2-> Os nativos sentindo falta dos suprimentos começaram a imitar o comportamento dos soldados
+    \item<3-> Assim esperando que isso faria voltar os aviões \uncover<4->{... mas eles não voltaram}
+    \item<5-> \textbf{Ciência do Culto à Carga} é exatamente isso:
+    \begin{itemize}
+      \item<6-> Tem "citações"
+      \item<7-> Tem "metodologia"
+      \item<8-> Tem até "tabelas estatísticas"  \uncover<9->{... e $p$-valores!}
+      \item<9-> \textbf{Pseudociência!}
+    \end{itemize}
+  \end{itemize}
+  \begin{reference}{4mm}{85mm}
+    Feynman, R. (1974). Cargo cult science. Caltech commencement address.
+  \end{reference}
+\end{frame}
+
+%--- Slide 3 ----------------------------------------------------------%
+
+\begin{frame}{O Experimento do Mr. Young}
+  \begin{columns}
+    \begin{column}{0.45\textwidth}
+      \begin{figure}[p]
+        \includegraphics[width=6cm]{images/rat_maze.png}
+    \end{figure}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{itemize}
+        \item<2->
+        \item<3->
+        \item<4->
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \begin{reference}{4mm}{85mm}
+    Feynman, R. (1974). Cargo cult science. Caltech commencement address.
+  \end{reference}
 \end{frame}
 
 %--- Slide 1 ----------------------------------------------------------%

@@ -288,3 +288,5 @@ TSWLatexianTemp*
 # glossaries
 *.glstex
 
+# Mac Stupid Files
+.DS_Store

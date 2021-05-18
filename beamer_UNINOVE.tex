@@ -8,6 +8,7 @@
 %\usepackage[english]{babel}
 %\usepackage[american]{babel}
 \usepackage[brazil]{babel}
+\usepackage{hyperref}
 \usepackage{graphicx}
 
 % Customize theme attributes
@@ -56,6 +57,9 @@
 
 \begin{frame}[plain]
   \titlepage
+  \begin{reference}{4mm}{90mm}
+    Slides e Código Julia em \href{https://github.com/storopoli/evidencias-cientificas}{\texttt{storopoli/evidencias-cientificas}}
+  \end{reference}
 \end{frame}
 
 %--- Slide 1 ----------------------------------------------------------%
@@ -91,7 +95,7 @@
       \item<6-> Tem "citações"
       \item<7-> Tem "metodologia"
       \item<8-> Tem até "tabelas estatísticas"  \uncover<9->{... e $p$-valores!}
-      \item<9-> \textbf{Pseudociência!}
+      \item<10-> \textbf{Pseudociência!}
     \end{itemize}
   \end{itemize}
   \begin{reference}{4mm}{85mm}
@@ -101,72 +105,102 @@
 
 %--- Slide 3 ----------------------------------------------------------%
 
-\begin{frame}{O Experimento do Mr. Young}
-  \begin{columns}
-    \begin{column}{0.45\textwidth}
-      \begin{figure}[p]
-        \includegraphics[width=6cm]{images/rat_maze.png}
-    \end{figure}
-    \end{column}
-    \begin{column}{0.45\textwidth}
+\begin{frame}{Cargo Cult Statistics}
+  \begin{itemize}
+      \item<2-> A mímica ritualística de estatísticas, em vez da prática conscienciosa
+      \item<3-> Isso se tornou a norma em muitas disciplinas, reforçado e estimulado:
       \begin{itemize}
-        \item<2->
-        \item<3->
-        \item<4->
+        \item<4-> educação estatística
+        \item<5-> software estatístico
+        \item<6-> políticas editoriais
       \end{itemize}
-    \end{column}
-  \end{columns}
+      \item<7-> Ciência deveria ser \textbf{"Show me"} e não \textbf{"Trust me"}
+    \end{itemize}
   \begin{reference}{4mm}{85mm}
-    Feynman, R. (1974). Cargo cult science. Caltech commencement address.
+    Stark, P. B., \& Saltelli, A. (2018). Cargo-cult statistics and scientific crisis. Significance, 15(4), 40–43.
+    \url{https://doi.org/10.1111/j.1740-9713.2018.01174.x}
   \end{reference}
 \end{frame}
 
-%--- Slide 1 ----------------------------------------------------------%
+%--- Slide 4 ----------------------------------------------------------%
 
-\begin{frame}{Bullets}
-
-Here is a sample slide that shows what \emph{itemized} and \emph{enumerated} lists look:
-
-\begin{columns}
-  \begin{column}{0.45\textwidth}
+\begin{frame}{Cargo Cult Statistics}
   \begin{itemize}
-    \item itemized item 1
-    \item itemized item 2
-    \item itemized item 3
+      \item<2-> Muitas aplicações de estatística são \textbf{Culto à Carga}:
+      \begin{itemize}
+        \item<3-> estimar modelos
+        \item<3-> computar $p$-valores ou intervalos de confiança
+        \item<3-> simular densidades posteriores
+        \item<3-> termos estatísticos
+      \end{itemize}
+      \item<4-> Porém pouco\footnote<4->{às vezes nenhum...} \textbf{entendimento} sobre:
+      \begin{itemize}
+        \item<5-> pressupostos das técnica
+        \item<5-> relevância dos valores
+        \item<5-> significado da terminologia
+      \end{itemize}
+      \item<6-> Isso rebaixa as estatísticas de uma \textbf{forma de pensar sobre as evidências e evitar a auto-ilusão}
+      para uma \textbf{"bênção" formal de alegações}.
+    \end{itemize}
+  \begin{reference}{4mm}{80mm}
+    Stark, P. B., \& Saltelli, A. (2018). Cargo-cult statistics and scientific crisis. Significance, 15(4), 40–43.
+    \url{https://doi.org/10.1111/j.1740-9713.2018.01174.x}
+  \end{reference}
+\end{frame}
+
+
+%--- Slide 5 ----------------------------------------------------------%
+
+\begin{frame}{Cargo Cult Statistics -- Frequentista vs Bayesiana}
+  \begin{columns}[T]
+
+    \begin{column}{0.45\textwidth}
+      {\Large \textbf{Frequentista}}
+      \begin{itemize}
+        \item $p$-valores
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.45\textwidth}
+      {\Large \textbf{Bayesiana}}
+      \begin{itemize}
+        \item \textit{Priors}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  ~\\[2ex]
+  \uncover<2->{Estatística \textbf{frequentista} é sobre o que você faria se tivesse um \textbf{modelo}, e
+  estatística \textbf{Bayesiana} e sobre o que você faria se tivesse uma \textbf{\textit{prior}}.}
+
+  \begin{reference}{4mm}{85mm}
+    Stark, P. B., \& Saltelli, A. (2018). Cargo-cult statistics and scientific crisis. Significance, 15(4), 40–43.
+    \url{https://doi.org/10.1111/j.1740-9713.2018.01174.x}
+  \end{reference}
+\end{frame}
+
+%--- Slide 6 ----------------------------------------------------------%
+
+\begin{frame}{Maioria dos achados publicados são \textbf{falsos}}
+  \begin{itemize}
+    \item<2-> Mais uma vez nosso amigo $p$-valor
+    \item<3-> Se adotarmos $p < 0.05$, 1 a cada 20 estudos serão "falsos positivos"
+    \item<4-> Se há um "viés de publicação" para somente aceitar/publicar achados positivos
+    \item<5-> Logo: \textbf{a proporção de 5\% acaba sendo exarcebada}
   \end{itemize}
-  \end{column}
 
-  \begin{column}{0.45\textwidth}
-  \begin{enumerate}
-    \item enumerated item 1
-    \item enumerated item 2
-    \item enumerated item 3
-  \end{enumerate}
-  \end{column}
-\end{columns}
-~\\[2ex]
+  ~\\[2ex]
+  \centering
+  \uncover<6->{\alert{Achados Falsos} e \alert{Crise de Replicabilidade}}
 
-The sample code also defines 2 columns.
-
+  \begin{reference}{4mm}{85mm}
+    Ioannidis, J. P. A. (2005). Why most published research findings are false. PLoS Medicine, 2(8), e124.
+  \end{reference}
 \end{frame}
 
-%--- Slide 2 -------------------------------------------------------------%
+%--- Slide 7 ----------------------------------------------------------%
 
-\begin{frame}{Floating Text}
-The \LaTeX{} package \texttt{textpos} makes it possible to put text objects in arbitrarily prescribed places.\\[2ex]
 
-With floating text, you define the environment name, font size, type, and color.\\[2ex]
-
-In this example, The \texttt{reference} environment is created to take two input arguments, which specify \texttt{x} and \texttt{y} text position.\\[2ex]
-
-Slide coordinates are defined relative to the top left corner.  A Beamer slide has dimensions 128mm by 98mm.  Trial and error ensures the ad-hoc text lands where you want.\\[2ex]
-
-Example below:
-
-\begin{reference}{4mm}{75mm}
-      V. Jikov, S. Kozlov and O. Olenik, Homogenization of differential operators and integral functionals, Springer, 1994.
-\end{reference}
-\end{frame}
 
 %--- End -------------------------------------------------------------%
 \end{document}

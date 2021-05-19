@@ -10,6 +10,10 @@
 \usepackage[brazil]{babel}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
 
 % Customize theme attributes
 \useoutertheme{infolines}					                     % adds 3 box footer
@@ -200,7 +204,37 @@
 
 %--- Slide 7 ----------------------------------------------------------%
 
+\begin{frame}{Moderação Positiva}
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[shorten >=1pt,node distance=5cm,auto]%,on grid
+        \tikzstyle{every node}=[thick, draw, ellipse, minimum size=1.5cm, align=center]
+        \node (densidade) {densidade\\ demográfica};
+        \node[right=of densidade] (transito) {trânsito};
+        \node[above right=2.95cm of densidade] (chuva) {chuva};
+        \path [->,draw,thick] (chuva) -- ($ (densidade) !.5! (transito) $);
+        \path [->,draw,thick] (densidade) -- (transito);
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+\end{frame}
 
+%--- Slide 9 ----------------------------------------------------------%
+
+\begin{frame}{Moderação Negativa}
+  \begin{figure}[H]
+    \begin{center}
+      \begin{tikzpicture}[shorten >=1pt,node distance=5cm,auto]%,on grid
+        \tikzstyle{every node}=[thick, draw, ellipse, minimum size=1.5cm, align=center]
+        \node (distancia) {distância\\ solar};
+        \node[right=of distancia] (temperatura) {temperatura};
+        \node[above right=2.85cm of distancia] (reflex) {coeficiente\\ de reflexão};
+        \path [->,draw,thick] (reflex) -- ($ (distancia) !.5! (temperatura) $);
+        \path [->,draw,thick] (distancia) -- (temperatura);
+      \end{tikzpicture}
+    \end{center}
+  \end{figure}
+\end{frame}
 
 %--- End -------------------------------------------------------------%
 \end{document}

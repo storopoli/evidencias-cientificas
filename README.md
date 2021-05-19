@@ -5,33 +5,29 @@
 
 Slides apresentados no Ateliê da Linha de Pesquisa de Estratégia sobre "Como Avaliar Evidências Científicas" no Programa de Pós-Graduação em Administração -- Mestrado e Doutorado Acadêmico da [UNINOVE](https://www.uninove.br).
 
-## Author
+## Autor
 
 José Eduardo Storopoli, PhD - [*Lattes* CV](http://lattes.cnpq.br/2281909649311607) - [ORCID](https://orcid.org/0000-0002-0559-5176) - <https://storopoli.io>
 
 <josees@uni9.pro.br>
 
-## Generate Fake Data
-* Trânsito e Chuva (moderação positiva numa relação positiva)
-  * densidade demográfica -- independente
-  * trânsito -- dependente
-  * chuva -- moderadora
-  * infraestrutura viária (km de vias) -- controle
-* Distância Solar (moderação positiva numa relação negativa)
-  * distância solar -- independente
-  * temperatura planeta -- dependente
-  * coeficiente de reflexão -- moderadora
+## Arquivos
 
-## GLM in Julia
-
-* [GLM.jl](https://github.com/JuliaStats/GLM.jl)
-* [RegressionTables.jl](https://github.com/jmboehm/RegressionTables.jl)
-
-```julia
-using GLM, RegressionTables
-
-lm = fit(LinearModel, @formula(SepalLength ~ SepalWidth), df)
-t = coeftable(lm)
-regtable(lm; renderSettings = latexOutput())
-regtable(lm; renderSettings = latexOutput("myoutputfile.tex"))
+```plaintext
+.
+├── images
+│   └── cargo_cult.png
+├── regressions.jl
+├── sim_data.jl
+├── slides.pdf
+├── slides.tex
+└── tables
+    ├── table_neg.tex
+    └── table_pos.tex
 ```
+
+## License
+
+This content is licensed under [Creative Commons Attribution-ShareAlike 4.0 Internacional](http://creativecommons.org/licenses/by-sa/4.0/).
+
+[![CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)

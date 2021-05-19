@@ -10,6 +10,8 @@
 \usepackage[brazil]{babel}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{booktabs}
 \usetikzlibrary{shapes}
 \usetikzlibrary{arrows}
 \usetikzlibrary{positioning}
@@ -46,7 +48,7 @@
 \title{Como avaliar evidências científicas?}
 \subtitle{Ateliê da Linha de Pesquisa de Estratégia}
 \author{Jose Storopoli}
-\institute[Programa de Pós-Grad`uação em Administração - Mestrado e Doutorado]{
+\institute[Programa de Pós-Graduação em Administração - Mestrado e Doutorado]{
    \textcolor{QPblue!75}{Universidade Nove de Julho \\
    UNINOVE \\
    São Paulo \\
@@ -204,7 +206,7 @@
 
 %--- Slide 7 ----------------------------------------------------------%
 
-\begin{frame}{Moderação Positiva}
+\begin{frame}{Moderação}
   \begin{figure}[H]
     \begin{center}
       \begin{tikzpicture}[shorten >=1pt,node distance=5cm,auto]%,on grid
@@ -219,9 +221,16 @@
   \end{figure}
 \end{frame}
 
+%--- Slide 8 ----------------------------------------------------------%
+
+\begin{frame}{Moderação}
+  \centering
+    \include{tables/table_pos.tex}
+\end{frame}
+
 %--- Slide 9 ----------------------------------------------------------%
 
-\begin{frame}{Moderação Negativa}
+\begin{frame}{Moderação}
   \begin{figure}[H]
     \begin{center}
       \begin{tikzpicture}[shorten >=1pt,node distance=5cm,auto]%,on grid
@@ -234,6 +243,13 @@
       \end{tikzpicture}
     \end{center}
   \end{figure}
+\end{frame}
+
+%--- Slide 10 ----------------------------------------------------------%
+
+\begin{frame}{Moderação}
+  \centering
+    \include{tables/table_neg.tex}
 \end{frame}
 
 %--- End -------------------------------------------------------------%

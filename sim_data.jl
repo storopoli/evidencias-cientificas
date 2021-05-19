@@ -12,8 +12,8 @@ end
 indep = rand(Normal(), N)
 moderation = rand(Exponential(2), N)
 indep_moderation = indep .* moderation
-dep_positive = 100 .+ (indep * 10) + random_noise(2, N) + (indep_moderation + random_noise(2, N))
-dep_negative = 10 .- (indep * 10) + random_noise(2, N) + (indep_moderation + random_noise(2, N))
+dep_positive = 100 .+ (indep * 10) + random_noise(2, N) + (indep_moderation + random_noise(2, N)) + random_noise(50, N)
+dep_negative = 10 .- (indep * 10) + random_noise(2, N) + (indep_moderation + random_noise(2, N)) + random_noise(30, N)
 
 df_pos = DataFrame(
     id=1:N,
